@@ -1,6 +1,7 @@
 import requests
 import matr
 import spinn
+import methods
 from bs4 import BeautifulSoup
 
 #Target URL
@@ -35,6 +36,6 @@ for spin_played in all_spins_played[::-1]:
         spin[posCol:posCol+3]
     ))
 
-last_spinned= matr.seq_matrix(matr.create_heardquartes(quan_lines, quan_columns), vectorInputData)
+last_spinned= methods.seq_matrix(matr.create_heardquartes(quan_lines, quan_columns), vectorInputData)
 print(last_spinned.victory, last_spinned.loser)
 matr.show_heardquartes(last_spinned.matrix)
