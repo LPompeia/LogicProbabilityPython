@@ -2,6 +2,7 @@ import spinn
 import matr
 
 def seq_matrix(matrix, values):
+  resultsPlayed = spinn.Last_spinPlayed(0,0, matrix)
   posMatrixActualSpinned = 0
   maxElementsMatrix = ((len(matrix) * len(matrix[0])) + len(matrix[0]))
   limitedSpinnedsAnalys = int(len(values) / maxElementsMatrix)
@@ -25,7 +26,6 @@ def seq_matrix(matrix, values):
       else:
         color = 'whi'
 
-    resultsPlayed = spinn.Last_spinPlayed(0,0, matrix)
     countElement = 0  
     while(countElement < len(vArmzNextResults)):
       win = color == vArmzNextResults[countElement]
@@ -34,6 +34,6 @@ def seq_matrix(matrix, values):
       else:
         resultsPlayed.loser +=  1
       countElement += 1
-  print('Terminated checked! Next array:', values[posMatrixActualSpinned].color)
+  print('Terminated checked! Next array:', values[posMatrixActualSpinned-1].color, values[posMatrixActualSpinned-1].hour)
   resultsPlayed.matrix = matrix
   return resultsPlayed
